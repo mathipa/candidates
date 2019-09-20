@@ -46,6 +46,22 @@ export class CandidateComponent implements OnInit {
 				this.label = "My birthday is";
 				this.value = formatDate(this.candidate.dob.date, "dd/MM/yyyy", this.locale);
 				break;
+			case 'map-location':
+				this.defaultActive = false;
+				this.label = "My address is";
+				this.value = `${this.candidate.location.street}`;
+				break;
+			case 'call':
+				this.defaultActive = false;
+				this.label = "My phone number is";
+				this.value = `${this.candidate.phone}`;
+				break;
+			case 'locked':
+				this.defaultActive = false;
+				this.label = "My password is";
+				this.value = `${this.candidate.login.password}`;
+				break;
+			default:
 		}
 	}
 }

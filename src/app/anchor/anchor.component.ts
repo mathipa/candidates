@@ -22,6 +22,7 @@ export class AnchorComponent implements OnInit {
 		}
 	}
 
+	//Check active state of an anchor link
 	ngOnChanges(changes: SimpleChanges) {
 		if (!this.isActive) {
 			const index = this.classes.indexOf(this.active);
