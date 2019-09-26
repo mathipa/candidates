@@ -1,4 +1,4 @@
-import {Component, OnInit, LOCALE_ID, Inject} from '@angular/core';
+import {Component, OnInit, LOCALE_ID, Inject, } from '@angular/core';
 import {CandidatesService} from "../services/candidates.service";
 import {ICandidate} from "../interfaces/ICandidate";
 import {formatDate} from "@angular/common";
