@@ -1,3 +1,44 @@
-<p>candidates-list works!</p>
-
+<div class="card" class="container">
+	<div class='card-header'>
+		{{pageTitle}}
+	</div>
+	<div class='card-body'>
+		<div class="row">
+			<div class="col-3">
+				<input [(ngModel)]="listFilter"
+					   type="text"
+					   class="form-control"
+					   id="filterInput"
+					   placeholder="Type to filter by name">
+			</div>
+			<div class="col">
+				<div *ngIf='listFilter' class="form-text text-muted">Filtered by: {{listFilter}}</div>
+			</div>
+		</div>
+		<div class='table-responsive'>
+			<table class='table' *ngIf='candidates && candidates.length'>
+				<thead>
+				<tr>
+					<th style="color:firebrick">Id</th>
+					<th>Name</th>
+					<th>Username</th>
+					<th>Email</th>
+					<th>City</th>
+					<th>Favourite</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr *ngFor='let candidate of filteredCandidates'>
+					<td>{{ candidate.id }}</td>
+					<td>{{ candidate.name }}</td>
+					<td>{{ candidate.username | lowercase }}</td>
+					<td>{{ candidate.email }}</td>
+					<td>{{ candidate.address.city }}</td>
+					<td><app-favourite></app-favourite></td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
 

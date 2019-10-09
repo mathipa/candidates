@@ -49,7 +49,7 @@ export class CandidateComponent implements OnInit {
 			case 'map-location':
 				this.defaultActive = false;
 				this.label = "My address is";
-				this.value = `${this.candidate.location.street}`;
+				this.value = `${this.candidate.location.city}`;
 				break;
 			case 'call':
 				this.defaultActive = false;
